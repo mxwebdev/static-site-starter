@@ -1,37 +1,37 @@
-name: 🚀 Build and deploy website on push to main branch
+# name: 🚀 Build and deploy website on push to main branch
 
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+# on:
+#   push:
+#     branches: [ "main" ]
+#   pull_request:
+#     branches: [ "main" ]
 
-jobs:
-  build:
+# jobs:
+#   build:
 
-    runs-on: ubuntu-latest
+#     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [16.x]
+#     strategy:
+#       matrix:
+#         node-version: [16.x]
 
-    steps:
-    - name: 🚚 Get latest code
-      uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - name: 🔨 Build Project    
-      run: | 
-        npm ci
-        npm run build --if-present
-    - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@4.3.1
-      with:
-        server: ftp.yourserver.com
-        username: ${{ secrets.ftp_user }}
-        password: ${{ secrets.ftp_password }}
-        local-dir: ./dist/
-        server-dir: /your/site/
+#     steps:
+#     - name: 🚚 Get latest code
+#       uses: actions/checkout@v3
+#     - name: Use Node.js ${{ matrix.node-version }}
+#       uses: actions/setup-node@v3
+#       with:
+#         node-version: ${{ matrix.node-version }}
+#         cache: 'npm'
+#     - name: 🔨 Build Project    
+#       run: | 
+#         npm ci
+#         npm run build --if-present
+#     - name: 📂 Sync files
+#       uses: SamKirkland/FTP-Deploy-Action@4.3.1
+#       with:
+#         server: ftp.yourserver.com
+#         username: ${{ secrets.ftp_user }}
+#         password: ${{ secrets.ftp_password }}
+#         local-dir: ./dist/
+#         server-dir: /your/site/
