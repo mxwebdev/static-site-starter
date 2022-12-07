@@ -1,8 +1,9 @@
 name: Build PR
 
-pull_request:
-    types: [ "opened" ]
-    branches: [ "main" ]
+on:
+    pull_request:
+        types: [ "opened" ]
+        branches: [ "main" ]
     
 jobs:
   build:
