@@ -8,12 +8,12 @@ updates:
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: "monthly"
+      interval: "daily"
     assignees:
       - "mxwebdev"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "monthly"
+      interval: "daily"
     assignees:
       - "mxwebdev"
