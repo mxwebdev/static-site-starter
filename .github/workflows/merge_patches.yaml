@@ -1,9 +1,9 @@
 name: Auto-merge patches
 on: pull_request
 
-#permissions:
-#  contents: write
-#  pull-requests: write
+permissions:
+  contents: write
+  pull-requests: write
 
 jobs:
   build:
